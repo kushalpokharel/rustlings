@@ -5,17 +5,29 @@
 
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
-    ???
+    let st:String = String::from(input);
+    String::from(st.trim())
 }
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There's multiple ways to do this!
-    ???
+    let mut s = String::from(input);
+    s.push_str(" world!");
+    s
 }
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons"!
-    ???
+    let s = String::from(input);
+    let coll:Vec<&str> = s.split(' ').map(|word| {
+        if word=="cars"{
+            return "balloons"
+        }
+        else{
+            word
+        }
+    }).collect();
+    coll.join(" ")
 }
 
 #[cfg(test)]
